@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "70610497489",
+    "firebase_url": "https://myportfoy-5b327-default-rtdb.firebaseio.com",
+    "project_id": "myportfoy-5b327",
+    "storage_bucket": "myportfoy-5b327.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:70610497489:android:779d836c718eb591353af0",
+        "android_client_info": {
+          "package_name": "com.example.myportfoy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "70610497489-30rv5vgdpkkl9o0362u053ukekh8itm0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACNTDs-7a-k_G1p2j6v751YRw-C-N826o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "70610497489-30rv5vgdpkkl9o0362u053ukekh8itm0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
