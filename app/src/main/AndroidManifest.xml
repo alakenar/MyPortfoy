@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Myportfoy">
         <activity
-            android:name=".MainActivity">
+            android:name=".BaslangicEkrani">
 
         <intent-filter>
               <action android:name="android.intent.action.MAIN" />
@@ -22,10 +22,18 @@
 
           <activity android:name=".LoginActivity">   </activity>
         <activity android:name=".HomepageActivity">   </activity>
-        <activity android:name=".KisiselNotlar">   </activity>
+        <activity android:name=".KisiselNotEkle"> </activity>
         <activity android:name=".MusteriListesi">   </activity>
         <activity android:name=".TarihselListe">   </activity>
         <activity android:name=".YeniKayit">   </activity>
+        <activity android:name=".MainActivity">   </activity>
+        <activity android:name=".KisiselNotlarListe">   </activity>
+        <activity android:name=".KisiselNotlar">   </activity>
+        <activity android:name=".KisiselNot">   </activity>
+
+
+
+
 
 
 

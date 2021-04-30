@@ -4,18 +4,17 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.myportfoy.databinding.ActivityLoginBinding
-import com.example.myportfoy.databinding.ActivityMainBinding
+import com.example.myportfoy.databinding.LoginBinding
 import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : AppCompatActivity(){
 
-    private lateinit var loginbind: ActivityLoginBinding
+    private lateinit var loginbind: LoginBinding
     private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        loginbind = ActivityLoginBinding.inflate(layoutInflater)
+        loginbind = LoginBinding.inflate(layoutInflater)
         setContentView(loginbind.root)
 
         auth = FirebaseAuth.getInstance()
@@ -34,7 +33,7 @@ class LoginActivity : AppCompatActivity(){
 
 
             if (mail.isEmpty() || sifre.isEmpty()) {
-                Toast.makeText(this, "Lütfen tüm alanları doldurun", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Lütfen tüm alanları doldurun.", Toast.LENGTH_SHORT).show()
             } else {
                 auth.signInWithEmailAndPassword(mail.trim(), sifre.trim())
                         .addOnSuccessListener {

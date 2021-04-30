@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#30d5c8">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="130dp"
+        android:layout_marginRight="130dp"
+        android:text="Yeni Kayıt"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.073" />
+
+    <ImageView
+        android:id="@+id/yeni_kayit_image"
+        android:layout_width="60dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textView3"
+        app:layout_constraintHorizontal_bias="0.16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.046"
+        app:srcCompat="@drawable/yeni_kayit_logo" />
+
+    <EditText
+        android:id="@+id/ad_soyad"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="#FFE67D"
+        android:ems="10"
+        android:hint="Ad-Soyad"
+        android:inputType="textPersonName"
+        android:textColor="#FFE67D"
+        android:textColorHint="#FFE67D"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/yeni_kayit_image" />
+
+    <EditText
+        android:id="@+id/firma_adi"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#FFE67D"
+        android:ems="10"
+        android:hint="Firma Adı"
+        android:inputType="textPersonName"
+        android:textColor="#FFE67D"
+        android:textColorHint="#FFE67D"
+        app:layout_constraintEnd_toEndOf="@+id/ad_soyad"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/ad_soyad"
+        app:layout_constraintTop_toBottomOf="@+id/ad_soyad" />
+
+    <EditText
+        android:id="@+id/tel_no"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#FFE67D"
+        android:ems="10"
+        android:hint="Telefon Numarası"
+        android:inputType="number"
+        android:textColor="#FFE67D"
+        android:textColorHint="#FFE67D"
+        app:layout_constraintEnd_toEndOf="@+id/firma_adi"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/firma_adi"
+        app:layout_constraintTop_toBottomOf="@+id/firma_adi" />
+
+    <EditText
+        android:id="@+id/soz_no"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#FFE67D"
+        android:ems="10"
+        android:hint="Sözleşme Numarası"
+        android:inputType="number"
+        android:textColor="#FFE67D"
+        android:textColorHint="#FFE67D"
+        app:layout_constraintStart_toStartOf="@+id/tel_no"
+        app:layout_constraintTop_toBottomOf="@+id/tel_no" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/yeni_kayit_button"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:background="@drawable/button_kayit_logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/metin_kutusu"
+        app:layout_constraintStart_toStartOf="@+id/metin_kutusu"
+        app:layout_constraintTop_toBottomOf="@+id/metin_kutusu"
+        app:layout_constraintVertical_bias="0.232" />
+
+    <EditText
+        android:id="@+id/metin_kutusu"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="20dp"
+        android:background="#FFE67D"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Eklemek istediğiniz not varsa  yazabilirsiniz."
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="@+id/soz_no"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/soz_no"
+        app:layout_constraintTop_toBottomOf="@+id/soz_no" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

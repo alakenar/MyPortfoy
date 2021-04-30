@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
-import com.example.myportfoy.databinding.ActivityMainBinding
+import com.example.myportfoy.databinding.MainBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -13,19 +13,23 @@ import com.google.firebase.database.FirebaseDatabase
 class MainActivity : AppCompatActivity() {
 
 
-    private lateinit var mainbind: ActivityMainBinding
+    private lateinit var mainbind: MainBinding
     private lateinit var auth: FirebaseAuth
     private lateinit var database: FirebaseDatabase
     private lateinit var reference: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mainbind = ActivityMainBinding.inflate(layoutInflater)
+        mainbind = MainBinding.inflate(layoutInflater)
         setContentView(mainbind.root)
 
         auth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance()
 
+        if (auth.currentUser != null) {
+        val i = Intent(this, HomepageActivity::class.java)
+        startActivity(i)
+          }
 
         mainbind.zbhvView.setOnClickListener {
 
@@ -56,7 +60,8 @@ class MainActivity : AppCompatActivity() {
                         val firebaseUser = auth.currentUser
                         val userId = firebaseUser!!.uid
 
-                        reference = database.getReference("kullanici").child(userId)
+                        reference = database.getReference("Kullanicilar").child(userId)
+
 
                         val hashMap: HashMap<String, String> = HashMap()
 
@@ -76,10 +81,5 @@ class MainActivity : AppCompatActivity() {
                 }.addOnFailureListener { exception ->
                     Toast.makeText(this, exception.localizedMessage, Toast.LENGTH_SHORT).show()
                 }
-
-
-
-
-
     }
     }

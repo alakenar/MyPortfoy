@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+
+    <ImageView
+        android:id="@+id/knotlar_image"
+        android:layout_width="60dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textView2"
+        app:layout_constraintHorizontal_bias="0.323"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.046"
+        app:srcCompat="@drawable/knotlar_logo" />
+
+    <Button
+        android:id="@+id/not_ekle"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:background="@drawable/view_tasarim"
+        android:text="Ekle"
+        android:textColor="#2EC1AC"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/yazilan_not"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="@+id/yazilan_not"
+        app:layout_constraintTop_toBottomOf="@+id/yazilan_not"
+        app:layout_constraintVertical_bias="0.253" />
+
+    <EditText
+        android:id="@+id/not_basligi"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="44dp"
+        android:background="#FFE67D"
+        android:ems="10"
+        android:hint="Not Başlığını Giriniz"
+        android:inputType="textPersonName"
+        android:textSize="19sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/knotlar_image" />
+
+    <EditText
+        android:id="@+id/yazilan_not"
+        android:layout_width="300dp"
+        android:layout_height="220dp"
+        android:layout_marginTop="28dp"
+        android:background="#FFE67D"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Eklemek istediğiniz notu giriniz."
+        android:inputType="textMultiLine"
+        android:textSize="19sp"
+        app:layout_constraintEnd_toEndOf="@+id/not_basligi"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/not_basligi"
+        app:layout_constraintTop_toBottomOf="@+id/not_basligi" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
+        android:text="Kişisel Notlar"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.073" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
