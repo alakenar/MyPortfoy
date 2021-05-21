@@ -8,7 +8,6 @@ import com.example.myportfoy.databinding.KisiselNotEkleBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import java.util.*
 import kotlin.collections.HashMap
 
 class KisiselNotEkle : AppCompatActivity() {

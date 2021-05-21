@@ -5,14 +5,14 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myportfoy.databinding.ItemKisiselNotBinding
 
-class ListeAdapter(private val newList: List<Veriler>, val onClickListener:(Veriler)->Unit) : RecyclerView.Adapter<ListeViewHolder>()  {
+class NotlarAdapter(private val newList: List<VerilerNot>, val onClickListener:(VerilerNot)->Unit) : RecyclerView.Adapter<NotlarViewHolder>()  {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListeViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NotlarViewHolder {
 
        val inflater= LayoutInflater.from(parent.context)
         val binding= ItemKisiselNotBinding.inflate(inflater,parent,false)
 
-        return ListeViewHolder(binding)
+        return NotlarViewHolder(binding)
 
     }
 
@@ -21,7 +21,7 @@ class ListeAdapter(private val newList: List<Veriler>, val onClickListener:(Veri
 
     }
 
-    override fun onBindViewHolder(holder: ListeViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: NotlarViewHolder, position: Int) {
         holder.bindTo(newList[position], onClickListener)
 
 

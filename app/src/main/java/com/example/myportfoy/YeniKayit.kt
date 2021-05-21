@@ -28,17 +28,17 @@ class YeniKayit: AppCompatActivity() {
 
         ykayitbind.yeniKayitButton.setOnClickListener {
 
-            val asoyad = ykayitbind.adSoyad.text.toString()
+            val adsoyad = ykayitbind.adSoyad.text.toString()
             val fadi = ykayitbind.firmaAdi.text.toString()
             val tno = ykayitbind.telNo.text.toString()
             val sno = ykayitbind.sozNo.text.toString()
             val mkutusu= ykayitbind.metinKutusu.text.toString()
 
-            if (asoyad.isEmpty() || fadi.isEmpty() || asoyad.isEmpty() || fadi.isEmpty()|| mkutusu.isEmpty()) {
+            if (adsoyad.isEmpty() || fadi.isEmpty() || adsoyad.isEmpty() || fadi.isEmpty()|| mkutusu.isEmpty()) {
                 Toast.makeText(this, "Lütfen tüm alanları doldurun.", Toast.LENGTH_SHORT).show()
             } else {
 
-                kayıtOl(asoyad, fadi, tno, sno, mkutusu)
+                kayıtOl(adsoyad, fadi, tno, sno, mkutusu)
             }
         }
     }
@@ -65,14 +65,14 @@ class YeniKayit: AppCompatActivity() {
                 reference.push().setValue(hashMap).addOnSuccessListener {
 
 
-                    Toast.makeText(this, ".", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Yeni kişi kaydedilmiştir.", Toast.LENGTH_SHORT).show()
 
 
-                    val i = Intent(this, HomepageActivity::class.java)
+                    val i = Intent(this, MusteriListesi::class.java)
                     startActivity(i)
                     YeniKayit().finish()
 
-                }.addOnFailureListener { Toast.makeText(this, "Yeni Kişi Eklenilemedi.", Toast.LENGTH_SHORT).show()
+                }.addOnFailureListener { Toast.makeText(this, "Yeni kişi eklenirken bir hata oluştu. Lütfen boşlukları eksiksiz doldurarak yeniden deneyin", Toast.LENGTH_SHORT).show()
                 }
         }
 

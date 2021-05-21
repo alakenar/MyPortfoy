@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.myportfoy.databinding.KisiselNotlarListeBinding
 import com.example.myportfoy.databinding.MusteriListesiBinding
 import com.google.firebase.database.*
 
@@ -20,35 +19,36 @@ class MusteriListesi: AppCompatActivity() {
 
 
         mlistesibind.recyclerview.apply {
-                this.layoutManager = LinearLayoutManager(this@MusteriListesi)
+            this.layoutManager = LinearLayoutManager(this@MusteriListesi)
 
-            }
+        }
 
-            veriGetir();
+        veriGetir();
+
         }
 
         private fun veriGetir() {
 
             lateinit var database: DatabaseReference
 
-            database = FirebaseDatabase.getInstance().reference.child("YeniKayit")
+            database = FirebaseDatabase.getInstance().reference.child("YeniKayıt")
 
             database.addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
-                    val posts = ArrayList<Veriler>()
+                    val posts = ArrayList<VerilerKayit>()
 
                     dataSnapshot.children.forEach {
-                       it.getValue(Veriler::class.java)?.let {
+                       it.getValue(VerilerKayit::class.java)?.let {
 
                             posts.add(it)
                             Log.d("veriler", posts.toString())
                         }
 
                     }
-                    val adapter = ListeAdapter(posts) {
+                    val adapter = KayitAdapter(posts) {
 
                         val intent =
-                                Intent(this@MusteriListesi, KisiselNot::class.java)
+                                Intent(this@MusteriListesi, KayitDetay::class.java)
                         intent.putExtra("veri", it)
                         startActivity(intent)
 

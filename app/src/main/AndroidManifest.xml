@@ -29,7 +29,9 @@
         <activity android:name=".MainActivity">   </activity>
         <activity android:name=".KisiselNotlarListe">   </activity>
         <activity android:name=".KisiselNotlar">   </activity>
-        <activity android:name=".KisiselNot">   </activity>
+        <activity android:name=".NotDetay">   </activity>
+        <activity android:name=".KayitDetay">   </activity>
+
 
 
 

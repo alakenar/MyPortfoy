@@ -25,6 +25,7 @@ class KisiselNotlarListe: AppCompatActivity() {
         }
 
         veriAl();
+
     }
 
     private fun veriAl() {
@@ -35,20 +36,20 @@ class KisiselNotlarListe: AppCompatActivity() {
 
         database.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val posts = ArrayList<Veriler>()
+                val posts = ArrayList<VerilerNot>()
 
                 dataSnapshot.children.forEach {
-                    it.getValue(Veriler::class.java)?.let {
+                    it.getValue(VerilerNot::class.java)?.let {
 
                         posts.add(it)
                         Log.d("veriler", posts.toString())
                     }
 
                 }
-                val adapter = ListeAdapter(posts) {
+                val adapter = NotlarAdapter(posts) {
 
                     val intent =
-                            Intent(this@KisiselNotlarListe, KisiselNot::class.java)
+                            Intent(this@KisiselNotlarListe, NotDetay::class.java)
                     intent.putExtra("veri", it)
                     startActivity(intent)
 

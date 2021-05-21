@@ -2,7 +2,6 @@ package com.example.myportfoy
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myportfoy.databinding.KisiselNotlarBinding
 

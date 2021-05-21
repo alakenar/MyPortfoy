@@ -5,6 +5,7 @@ import kotlinx.parcelize.Parcelize
 
 
 @Parcelize
-class Veriler(
+class VerilerNot(
         var nbaslik: String = "",
         var ynot: String = "") : Parcelable
+
