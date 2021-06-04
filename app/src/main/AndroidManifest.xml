@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Myportfoy">
         <activity
-            android:name=".BaslangicEkrani">
+            android:name=".ui.BaslangicEkraniActivity">
 
         <intent-filter>
               <action android:name="android.intent.action.MAIN" />
@@ -20,17 +20,19 @@
 
       </activity>
 
-          <activity android:name=".LoginActivity">   </activity>
-        <activity android:name=".HomepageActivity">   </activity>
-        <activity android:name=".KisiselNotEkle"> </activity>
-        <activity android:name=".MusteriListesi">   </activity>
-        <activity android:name=".TarihselListe">   </activity>
-        <activity android:name=".YeniKayit">   </activity>
-        <activity android:name=".MainActivity">   </activity>
-        <activity android:name=".KisiselNotlarListe">   </activity>
-        <activity android:name=".KisiselNotlar">   </activity>
-        <activity android:name=".NotDetay">   </activity>
-        <activity android:name=".KayitDetay">   </activity>
+          <activity android:name=".ui.LoginActivity">   </activity>
+        <activity android:name=".ui.HomepageActivity">   </activity>
+        <activity android:name=".ui.KisiselNotEkleActivity"> </activity>
+        <activity android:name=".ui.MusteriListesiActivity">   </activity>
+        <activity android:name=".ui.TarihselListeActivity">   </activity>
+        <activity android:name=".ui.YeniKayitActivity">   </activity>
+        <activity android:name=".ui.MainActivity">   </activity>
+        <activity android:name=".ui.KisiselNotlarListeActivity">   </activity>
+        <activity android:name=".ui.KisiselNotlarActivity">   </activity>
+        <activity android:name=".ui.NotDetayActivity">   </activity>
+        <activity android:name=".ui.KayitDetayActivity">   </activity>
+        <activity android:name=".ui.ForgotPasswordActivity">   </activity>
+
 
 
 

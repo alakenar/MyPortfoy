@@ -1,9 +1,10 @@
-package com.example.myportfoy
+package com.example.myportfoy.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myportfoy.databinding.ItemYeniKayitBinding
+import com.example.myportfoy.model.VerilerKayit
 
 class KayitAdapter (private val newList: List<VerilerKayit>, val onClickListener:(VerilerKayit)->Unit) : RecyclerView.Adapter<KayitViewHolder>()  {
 

@@ -1,17 +1,17 @@
-package com.example.myportfoy
+package com.example.myportfoy.ui
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.myportfoy.databinding.BaslangicEkraniBinding
+import com.example.myportfoy.databinding.ActivityBaslangicEkraniBinding
 
-class BaslangicEkrani: AppCompatActivity () {
+class BaslangicEkraniActivity: AppCompatActivity () {
 
-    private lateinit var bekranibind: BaslangicEkraniBinding
+    private lateinit var bekranibind: ActivityBaslangicEkraniBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        bekranibind= BaslangicEkraniBinding.inflate(layoutInflater)
+        bekranibind= ActivityBaslangicEkraniBinding.inflate(layoutInflater)
         setContentView(bekranibind.root)
 
 
@@ -19,7 +19,7 @@ class BaslangicEkrani: AppCompatActivity () {
             override fun run() {
                 try {
                     Thread.sleep(2000)
-                    val intent = Intent(this@BaslangicEkrani, MainActivity::class.java)
+                    val intent = Intent(this@BaslangicEkraniActivity, MainActivity::class.java)
                     startActivity(intent)
                 }catch (e : Exception){
                     e.printStackTrace()

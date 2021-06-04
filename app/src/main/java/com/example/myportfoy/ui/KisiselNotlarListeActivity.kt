@@ -1,26 +1,28 @@
-package com.example.myportfoy
+package com.example.myportfoy.ui
 
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.myportfoy.databinding.KisiselNotlarListeBinding
+import com.example.myportfoy.adapter.NotlarAdapter
+import com.example.myportfoy.databinding.ActivityKisiselNotlarListeBinding
+import com.example.myportfoy.model.VerilerNot
 import com.google.firebase.database.*
 
-class KisiselNotlarListe: AppCompatActivity() {
+class KisiselNotlarListeActivity: AppCompatActivity() {
 
 
-    private lateinit var knotlarlistebind: KisiselNotlarListeBinding
+    private lateinit var knotlarlistebind: ActivityKisiselNotlarListeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
-        knotlarlistebind = KisiselNotlarListeBinding.inflate(layoutInflater)
+        knotlarlistebind = ActivityKisiselNotlarListeBinding.inflate(layoutInflater)
         setContentView(knotlarlistebind.root)
 
-        knotlarlistebind.recyclerview.apply {
-            this.layoutManager = LinearLayoutManager(this@KisiselNotlarListe)
+        knotlarlistebind.recyclerviewNot.apply {
+            this.layoutManager = LinearLayoutManager(this@KisiselNotlarListeActivity)
 
         }
 
@@ -49,12 +51,12 @@ class KisiselNotlarListe: AppCompatActivity() {
                 val adapter = NotlarAdapter(posts) {
 
                     val intent =
-                            Intent(this@KisiselNotlarListe, NotDetay::class.java)
+                            Intent(this@KisiselNotlarListeActivity, NotDetayActivity::class.java)
                     intent.putExtra("veri", it)
                     startActivity(intent)
 
                 }
-                knotlarlistebind.recyclerview.adapter = adapter
+                knotlarlistebind.recyclerviewNot.adapter = adapter
                 adapter.notifyDataSetChanged()
 
             }

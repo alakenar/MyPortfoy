@@ -79,28 +79,32 @@
         app:layout_constraintTop_toTopOf="@+id/view4" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/uyeol"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Henüz Üye Değil Misiniz?"
+        android:layout_marginTop="10dp"
+        android:text="Henüz Üye Değil Misiniz? Üye Ol."
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/giris_button" />
 
     <TextView
-        android:id="@+id/uyeol"
+        android:id="@+id/password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Üye Ol"
-        android:textColor="#FFFFFF"
+        android:layout_marginBottom="80dp"
+        android:text="Şifremi Unuttum"
+        android:textColor="#FFE67D"
         android:textColorHint="#FFFFFF"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/uyeol"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="@+id/uyeol"
+        app:layout_constraintTop_toBottomOf="@+id/uyeol"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

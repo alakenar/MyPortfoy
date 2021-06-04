@@ -1,25 +1,27 @@
-package com.example.myportfoy
+package com.example.myportfoy.ui
 
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.myportfoy.databinding.MusteriListesiBinding
+import com.example.myportfoy.adapter.KayitAdapter
+import com.example.myportfoy.databinding.ActivityMusteriListesiBinding
+import com.example.myportfoy.model.VerilerKayit
 import com.google.firebase.database.*
 
-class MusteriListesi: AppCompatActivity() {
+class MusteriListesiActivity: AppCompatActivity() {
 
-    private lateinit var mlistesibind: MusteriListesiBinding
+    private lateinit var mlistesibind: ActivityMusteriListesiBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mlistesibind = MusteriListesiBinding.inflate(layoutInflater)
+        mlistesibind = ActivityMusteriListesiBinding.inflate(layoutInflater)
         setContentView(mlistesibind.root)
 
 
-        mlistesibind.recyclerview.apply {
-            this.layoutManager = LinearLayoutManager(this@MusteriListesi)
+        mlistesibind.recyclerviewKayit.apply {
+            this.layoutManager = LinearLayoutManager(this@MusteriListesiActivity)
 
         }
 
@@ -48,12 +50,12 @@ class MusteriListesi: AppCompatActivity() {
                     val adapter = KayitAdapter(posts) {
 
                         val intent =
-                                Intent(this@MusteriListesi, KayitDetay::class.java)
+                                Intent(this@MusteriListesiActivity, KayitDetayActivity::class.java)
                         intent.putExtra("veri", it)
                         startActivity(intent)
 
                     }
-                    mlistesibind.recyclerview.adapter = adapter
+                    mlistesibind.recyclerviewKayit.adapter = adapter
                     adapter.notifyDataSetChanged()
 
                 }

@@ -1,20 +1,20 @@
-package com.example.myportfoy
+package com.example.myportfoy.ui
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.myportfoy.databinding.LoginBinding
+import com.example.myportfoy.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
 
-class LoginActivity : AppCompatActivity(){
+class LoginActivity : AppCompatActivity() {
 
-    private lateinit var loginbind: LoginBinding
+    private lateinit var loginbind: ActivityLoginBinding
     private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        loginbind = LoginBinding.inflate(layoutInflater)
+        loginbind = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(loginbind.root)
 
         auth = FirebaseAuth.getInstance()
@@ -24,6 +24,11 @@ class LoginActivity : AppCompatActivity(){
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
 
+        }
+
+        loginbind.password.setOnClickListener {
+            val intent = Intent(this, ForgotPasswordActivity::class.java)
+            startActivity(intent)
         }
 
         loginbind.girisButton.setOnClickListener {
@@ -36,15 +41,15 @@ class LoginActivity : AppCompatActivity(){
                 Toast.makeText(this, "Lütfen tüm alanları doldurun.", Toast.LENGTH_SHORT).show()
             } else {
                 auth.signInWithEmailAndPassword(mail.trim(), sifre.trim())
-                        .addOnSuccessListener {
+                    .addOnSuccessListener {
 
-                            val i = Intent(this, HomepageActivity::class.java)
-                            startActivity(i)
-                            LoginActivity().finish()
+                        val i = Intent(this, HomepageActivity::class.java)
+                        startActivity(i)
+                        LoginActivity().finish()
 
-                        }.addOnFailureListener { exception ->
-                            Toast.makeText(this, exception.localizedMessage, Toast.LENGTH_SHORT).show()
-                        }
+                    }.addOnFailureListener { exception ->
+                        Toast.makeText(this, exception.localizedMessage, Toast.LENGTH_SHORT).show()
+                    }
             }
         }
 

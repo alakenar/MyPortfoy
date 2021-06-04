@@ -1,7 +1,8 @@
-package com.example.myportfoy
+package com.example.myportfoy.adapter
 
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myportfoy.databinding.ItemYeniKayitBinding
+import com.example.myportfoy.model.VerilerKayit
 
 class KayitViewHolder
 

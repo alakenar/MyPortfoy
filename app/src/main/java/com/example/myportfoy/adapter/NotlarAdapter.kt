@@ -1,9 +1,10 @@
-package com.example.myportfoy
+package com.example.myportfoy.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myportfoy.databinding.ItemKisiselNotBinding
+import com.example.myportfoy.model.VerilerNot
 
 class NotlarAdapter(private val newList: List<VerilerNot>, val onClickListener:(VerilerNot)->Unit) : RecyclerView.Adapter<NotlarViewHolder>()  {
 
